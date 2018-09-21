@@ -1,0 +1,8 @@
+<div class="item" [class.dead]="rover.status !== 'active'">
+  <div class="label">{{ rover.name }}</div>
+  <div class="photo">
+    <img [src]="rover.img_src" (click)="select.emit(rover)">
+    <!-- cette syntaxe fait appel à l'attribut et non à la propriété, il y a plus de propriétés que d'attributs img src="{{ rover.img_src }}" -->
+  </div>
+  <div class="bar" [style.width.px]="rover.max_sol / 40"></div>
+</div>

@@ -1,0 +1,10 @@
+<p *ngIf="error">Erreur : {{ error | json }}</p>
+
+<pre *ngIf="!error">
+  <app-rover-item *ngFor="let rover of roverList$ | async" [roverProperty]="rover"
+                  (roverSelectedEvent)="selectedRover = $event"
+  > </app-rover-item>
+  <app-rover-details *ngIf="selectedRover" [rover]="selectedRover"></app-rover-details>
+</pre>
+
+
